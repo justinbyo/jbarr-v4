@@ -1,0 +1,22 @@
+// Typography
+// ---------------------------------
+
+h1 {
+  font-size: rem(24px);
+
+  @include media($medium-screen){
+    font-size: rem(48px);
+  }
+}
+
+p {
+  font-size: rem(18px);
+}
+
+.row {
+  @include outer-container;
+}
+
+.container {
+  @include span-columns(12);
+}
