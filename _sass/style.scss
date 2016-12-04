@@ -1,3 +1,11 @@
+// Site wide stuff
+// ---------------------------------
+
+body {
+  background-color: $near-white;
+}
+
+
 // Typography
 // ---------------------------------
 
@@ -9,14 +17,204 @@ h1 {
   }
 }
 
+h2 {
+  font-size: rem(22px);
+
+  @include media($medium-screen){
+    font-size: rem(36px);
+  }
+}
+
+h3 {
+  font-size: rem(20px);
+
+  @include media($medium-screen){
+    font-size: rem(24px);
+  }
+}
+
 p {
   font-size: rem(18px);
 }
+
+// Layout
+// ---------------------------------
 
 .row {
   @include outer-container;
 }
 
-.container {
+.container--content {
   @include span-columns(12);
+
+  @include media($tablet) {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
+  @include media($desktop) {
+    @include shift(2);
+    @include span-columns(8);
+  }
+}
+
+// .container--content-left {
+//
+// }
+
+// Intro Section
+// ---------------------------------
+
+.intro {
+  padding: $spacer-l 0;
+}
+
+.intro__content {
+  @extend .container--content;
+}
+
+// Case studies
+// ---------------------------------
+
+$block-height: 4 * $spacer-xl;
+
+.case-studies {
+
+}
+
+.case-study {
+  background-color: pink;
+  height: $block-height;
+  margin-bottom: $spacer-m;
+  @include span-columns(12);
+  @include omega(2n);
+
+  @include media($large-screen){
+    @include span-columns(6);
+  }
+
+  &:nth-child(1) {
+    background-color: $blue;
+  }
+  &:nth-child(2) {
+    background-color: $light-red;
+  }
+  &:nth-child(3) {
+    background-color: $light-pink;
+  }
+  &:nth-child(4) {
+    background-color: $light-silver;
+  }
+  &:nth-child(5) {
+    background-color: $near-black;
+  }
+  &:nth-child(6) {
+    background-color: $gold;
+  }
+}
+
+// References
+// ---------------------------------
+
+.references {
+  padding: $spacer-l 0;
+
+  @include media($large-screen) {
+    padding: (2 * $spacer-l) 0;
+  }
+}
+
+.references__content {
+  @include span-columns(12);
+
+  @include media($tablet) {
+    &:nth-child(1) {
+      @include shift(1);
+      @include span-columns(4);
+    }
+
+    &:nth-child(2) {
+      @include span-columns(3);
+    }
+
+    &:nth-child(3) {
+      @include span-columns(2);
+    }
+  }
+
+  @include media($desktop) {
+    &:nth-child(1) {
+      @include shift(2);
+      @include span-columns(4);
+    }
+
+    &:nth-child(2) {
+      @include span-columns(3);
+    }
+
+    &:nth-child(3) {
+      @include span-columns(2);
+    }
+  }
+}
+
+// Biography
+// ---------------------------------
+
+.biography {
+
+}
+
+.biography__copy {
+  // @extend .container--content-left;
+  @include span-columns(12);
+  padding: $spacer-l 0;
+
+  @include media($tablet) {
+    @include shift(1);
+    @include span-columns(10);
+  }
+
+  @include media($large-screen) {
+    @include shift(1);
+    @include span-columns(4);
+  }
+}
+
+.biography__photo {
+  @include span-columns(12);
+
+  @include media($large-screen){
+    @include shift(1);
+    @include span-columns(6);
+  }
+
+  background-color: $silver;
+  height: $block-height;
+}
+
+// Footer
+// ---------------------------------
+
+.footer {
+  padding: (2 * $spacer-l) 0 $spacer-m 0;
+
+  .container {
+    @include span-columns(12);
+    text-align: left;
+
+
+    @include media($tablet) {
+      @include shift(1);
+      @include span-columns(10);
+      text-align: center;
+    }
+  }
+
+  p {
+    border-top: 1px solid $light-gray;
+    color: $gray;
+    font-size: rem(12px);
+    padding-top: $spacer-m;
+  }
 }

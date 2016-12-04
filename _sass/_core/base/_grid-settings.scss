@@ -6,21 +6,24 @@
 // $grid-columns: 12;
 // $max-width: 1200px;
 
-// Neat Breakpoints
-$medium-screen: 600px;
-$large-screen: 900px;
 
-$medium-screen: new-breakpoint(min-width $medium-screen);
-$large-screen: new-breakpoint(min-width $large-screen);
+
+
 
 // Mobile only
-$mobile: new-breakpoint(max-width 480px 4);
+// $mobile: new-breakpoint(max-width 480px);
 
 // Tablet size and larger
-$tablet: new-breakpoint(min-width 481px 4);
+$tablet: new-breakpoint(min-width 481px);
+
+
+$medium-screen: new-breakpoint(min-width 600px);
 
 // Desktop size and larger
-$desktop: new-breakpoint(min-width 787px 4);
+$desktop: new-breakpoint(min-width 787px);
+
+
+$large-screen: new-breakpoint(min-width 900px);
 
 // Big-ass desktop
 $desktop-huge: new-breakpoint(min-width 1160px);

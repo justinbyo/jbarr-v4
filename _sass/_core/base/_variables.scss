@@ -29,6 +29,14 @@ $action-color: $blue;
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
+// Custom spacer sizes
+$spacer-xxs:rem(10);
+$spacer-xs:rem(15);
+$spacer-s:rem(20);
+$spacer-m:rem(30);
+$spacer-l:rem(60);
+$spacer-xl:rem(100);
+
 // Background Colors
 $base-background-color: #fff;
 $secondary-background-color: tint($base-border-color, 75%);
