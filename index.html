@@ -27,24 +27,22 @@ layout: default
   </div>
 </div>
 <div class="row case-studies">
-  <div class="case-study">
-  </div>
+
+
+  {% for post in site.posts %}
 
   <div class="case-study">
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <p class="subtitle">{{post.subtitle}}</p>
+    <p class="post-description">{{ post.description }}</p>
+    <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
   </div>
 
-  <div class="case-study">
-  </div>
-
-  <div class="case-study">
-  </div>
-
-  <div class="case-study">
-  </div>
-
-  <div class="case-study">
-  </div>
+  {% endfor %}
 </div>
+
+
+
 <div class="row references">
   <div class="references__content">
     <h3>Writing and interviews</h3>
