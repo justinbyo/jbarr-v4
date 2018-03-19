@@ -7,7 +7,21 @@
 
       {% include header.html %}
 
-      {{ content }}
+      <div class="row">
+        <a href="{{ site.github.url }}/" class="post-meta">&#8592; Back to Work</a>
+
+        <h2>{{ page.title }}</h2>
+
+        {{ content }}
+
+        {% if page.previous.url %}
+                <a href="{{page.previous.url  | prepend:site.github.url }}" title="Next case study:
+{{page.previous.title}}" onclick="_gaq.push(['_trackEvent', 'next-case-study', 'clicked'])">Read the next case study <span>&#8594;</span></a>
+        {% endif %}
+
+        <a href="{{ site.github.url }}/work" onclick="_gaq.push(['_trackEvent', 'back-to-work', 'clicked'])"><span>&#8592;</span> Back to work</a>
+
+      </div>
 
       {% include footer.html %}
 
